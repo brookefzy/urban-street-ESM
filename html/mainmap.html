@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <script src="../javascript/maphelpers.js"></script>
+
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="../css/maps_main.css">
+    <!-- geocoding style -->
+        <link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+    type="text/css"
+    />
+
+    <style>
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id='map' class='map pad2'></div>
+
+
+
+ <!-- geocoding search and side bar -->
+
+    <aside class="as-sidebar as-sidebar--right collapse-in-onboarding" data-name="Controls">
+        <div class="as-container as-container--scrollable js-scroll">
+            <section class="as-box" id="search-container">
+                <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+
+
+            </section>
+            <section class="as-box" id="legend">
+                <!-- legend -->
+                <div class="legend legend-panel js-legend hide-in-onboarding">
+                    <div class="widgets-item legend-inner as-box">
+                        <h2 class="as-body as-font--medium legend-text" id="legendtitle">Mismatch Index</h2>
+                        <div class="mismatch-legend" id="mismatch-color"></div>
+
+                        <div class="labels-legend">
+                            <span class="as-caption" id="legend-left">Offline</span>
+                            <span class="as-caption" id="legend-right">Online</span>
+                            <div class="legend-triangle">
+                                <svg height="10" width="100" class ="legend-triangle-poly">
+                                    <polygon points="0,10,100,10,100,0,0,7" style="fill:white;stroke:no" />
+                                </svg>
+                                <span class="as-caption-2" >Offline Visit Volume</span>
+                            </div>
+
+                        <!-- <div class="labels-legend"> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section  class="as-box layer" >
+                <select id="layer" onchange = "switchStyle()">
+                    <div class="dropdown-content">
+                        <option value="mismatch">Mismatch Index</option>
+                        <option value="offline">Offline Visit</option>
+                        <option value="online">Online Visit</option>
+                        <option value="quantilediff">Quantile Differences</option>
+                    </div>
+                </select>
+            </section>
+        </div>
+    </aside>
+
+
+
+
+  <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+  <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
+  <script>
+    var hoveredstreetId = null;
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYnJvb2tlZnp5IiwiYSI6ImNqdWFtZHNmdTA0N3o0M21oZG9peDU2NXMifQ.fbFnwmA72jGPO8IHcfEeRA';
+
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/brookefzy/cka1yguhe01of1jqharhr7bei' // replace this with your style URL
+    });
+
+
+      map.on('click','Mismatch Index', function(e) {
+        // var cbgs = map.queryRenderedFeatures(e.point,{
+        //   layers:['rdof-group']
+        // });
+        console.log(e.features[0].properties.logvisit_predict)
+          new mapboxgl.Popup()
+          .setLngLat(e.lngLat)
+          .setHTML(
+
+            '<h3>Diversity Score: '+percentNumber(e.features[0].properties.store_diversity)+'</h3>'+'<h2><strong>'+e.features[0].properties.st_label+'</strong></h2>'+
+            '<h3>Offline: '+svgbar1(e.features[0].properties.total_visit)+
+                // percentNumvisit(e.features[0].properties.total_visit)+'</h3>'+
+            '<h3>Online: '+svgbar2(e.features[0].properties.logvisit_predict)+///////////need adjustment
+                // percentNumpre(e.features[0].properties.logvisit_predict)+'</h3>'+
+                '<h4><strong>'+
+             percentNumber(e.features[0].properties.mismatch_reshape)+'</strong></h4>'+
+             '<h3>Mismatch Index</strong><br></h3>'
+        )
+          .addTo(map);
+          });
+
+          // Change the cursor to a pointer when the mouse is over the states layer.
+          map.on('mouseenter', 'Mismatch Index', function() {
+          map.getCanvas().style.cursor = 'pointer';
+          });
+
+          // Change it back to a pointer when it leaves.
+          map.on('mouseleave', 'Mismatch Index', function() {
+          map.getCanvas().style.cursor = '';
+          });
+
+//geocoder
+            map.addControl(
+            new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+            }));
+//geocoder
+
+
+
+            function switchStyle(){
+                var selstyle = document.getElementById("layer");
+                var layerId = selstyle.value;
+                var legendname=document.getElementById("legendtitle")
+                var legendleft=document.getElementById("legend-left")
+                var legendright=document.getElementById("legend-right")
+                var legendcolor=document.getElementById("mismatch-color")
+
+                if(layerId=="offline"){
+                // console.log(layerId)
+                map.setStyle('mapbox://styles/brookefzy/cka34gg5f024q1ipfokjck4u2');
+                legendname.innerHTML ="Offline Visit"
+                legendleft.innerHTML = "Low"
+                legendright.innerHTML = "High"
+                legendcolor.className ="offline-legend"
+
+            }else if(layerId=="online"){
+                legendname.innerHTML ="Online Visit"
+                legendleft.innerHTML = "Low"
+                legendright.innerHTML = "High"
+                legendcolor.className ="online-legend"
+
+
+                map.setStyle('mapbox://styles/brookefzy/cka34ksar02bw1iqqwwofy3os')
+
+            }else if (layerId=="mismatch"){
+                legendname.innerHTML ="Mismatch Index"
+                legendleft.innerHTML = "Offline"
+                legendright.innerHTML = "Online"
+                legendcolor.className="mismatch-legend"
+                map.setStyle('mapbox://styles/brookefzy/cka1yguhe01of1jqharhr7bei');
+            }else if (layerId =="quantilediff"){
+                legendname.innerHTML ="Quantile Difference"
+                legendleft.innerHTML = "Offline"
+                legendright.innerHTML = "Online"
+                legendcolor.className ="quantile-legend"
+                map.setStyle('mapbox://styles/brookefzy/cka4g185703h01ilgwf3qjrg4')
+            }
+
+            }
+
+
+
+
+
+
+  </script>
+
+
+
+  </body>
+
+</html>

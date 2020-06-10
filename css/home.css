@@ -1,0 +1,102 @@
+
+
+body {
+    background-color: black;
+}
+
+h1  {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    /* font-weight: Black; */
+    font-size: 64px;
+}
+
+h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    color: white;
+    position: relative;
+    top: 0%;
+    line-height: 1.3;
+    width: 800px;
+}
+
+p   {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.8;
+    text-indent: 0em;
+    text-align: justify;
+
+    position: relative;
+    color: white;
+
+    top: 0px;
+    /* height: 70px; */
+    width: 720px;
+}
+
+#map_text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+
+    color: white;
+
+    position: relative;
+    bottom: 20%;
+    margin-bottom: 10px;
+}
+
+/* #playBtn {
+    position: relative;
+    font-size: 18px;
+    cursor: pointer;
+    top: 60%;
+} */
+
+#bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content {
+    position: absolute;
+    /* bottom: 10%; */
+    top: 10%;
+    left: 10%;
+    /* height: 80%; */
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+
+
+}
+
+.popup_btn {
+    display: inline-block;
+    /* position:absolute; */
+    background-color: #c22e01;
+    /* width: %; */
+    border: none;
+    color: white;
+    font-size: 1em;
+    /* margin-top: 2%; */
+    /* margin-bottom: 20px; */
+    border-radius: 3px;
+    padding: 6px;
+    padding-left:18px;
+    padding-right:18px;
+    padding-bottom: 8px;
+    /* margin:3px; */
+    
+
+}
+
+.supsub {position: absolute; font-size: 32px;}
+.subscript {display:block; position:relative; left:5px; top: 10px; color: #c22e01}
+.superscript {display:block; position:relative; left:5px; top: 5px; color: #00939c}
