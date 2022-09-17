@@ -11,7 +11,7 @@ body {
 
 .header {
   z-index: 1;
-  background-color: #042762;
+  background-color: #f8f8f8;
   position: fixed;
   color: white;
   width: 100%;
@@ -87,8 +87,8 @@ li {
   /* Full height */
   overflow: auto;
   /* Enable scroll if needed */
-  background-color: #042762; /* Fallback color */
-  box-shadow: 0 0 24px #042762;
+  background-color: #f8f8f8; /* Fallback color */
+  box-shadow: 0 0 24px #f8f8f8;
   border-radius: 12px;
   /* display: block; */
 }
@@ -108,7 +108,7 @@ li {
 
   line-height: 150%;
   border-radius: 12px;
-  box-shadow: 0 0 24px #042762;
+  box-shadow: 0 0 24px #f8f8f8;
   /* display: inline-block; */
 }
 

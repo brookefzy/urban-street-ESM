@@ -23,7 +23,7 @@ div {
 
 
 body.as-app-body {
-    background: #042762;
+    background: #f8f8f8;
     text-rendering: geometricPrecision;
 }
 body.as-app-body {
@@ -33,7 +33,7 @@ body.as-app-body {
     padding: 0;
 }
 body {
-    background-color: #042762;
+    background-color: #f8f8f8;
     display: block;
     margin: 0px;
 }
@@ -51,7 +51,7 @@ h3{
     color: white;
     text-decoration: none; */
     z-index: 1;
-    background-color: #042762;
+    background-color: #f8f8f8;
     position: fixed;
     color: white;
     width: 100%;
@@ -129,7 +129,7 @@ li {
     right: 0;
     bottom: 0;
     left: 0;
-    background: #042762;
+    background: #f8f8f8;
     z-index: 400;
     display: none;
 }

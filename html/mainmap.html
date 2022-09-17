@@ -42,25 +42,24 @@
                 <!-- legend -->
                 <div class="legend legend-panel js-legend hide-in-onboarding">
                     <div class="widgets-item legend-inner as-box">
-                        <h2 class="as-body as-font--medium legend-text" id="legendtitle">Mismatch Index</h2>
-                        <div class="mismatch-legend" id="mismatch-color"></div>
-
+                        <h2 class="as-body as-font--medium legend-text" id="legendtitle">ESM</h2>
+                        <div class="esm-legend" id="esm-color"></div>
                         <div class="labels-legend">
-                            <span class="as-caption" id="legend-left">Offline</span>
-                            <span class="as-caption" id="legend-right">Online</span>
-                            <div class="legend-triangle">
+                            <span class="as-caption" id="legend-left">Segregated</span>
+                            <span class="as-caption" id="legend-right">Mixed</span>
+                            <!-- <div class="legend-triangle">
                                 <svg height="10" width="100" class ="legend-triangle-poly">
                                     <polygon points="0,10,100,10,100,0,0,7" style="fill:white;stroke:no" />
                                 </svg>
-                                <span class="as-caption-2" >Offline Visit Volume</span>
-                            </div>
+                                <span class="as-caption-2" >Total Time</span>
+                            </div> -->
 
                         <!-- <div class="labels-legend"> -->
                         </div>
                     </div>
                 </div>
             </section>
-            <section  class="as-box layer" >
+            <!-- <section  class="as-box layer" >
                 <select id="layer" onchange = "switchStyle()">
                     <div class="dropdown-content">
                         <option value="mismatch">Mismatch Index</option>
@@ -69,7 +68,7 @@
                         <option value="quantilediff">Quantile Differences</option>
                     </div>
                 </select>
-            </section>
+            </section> -->
         </div>
     </aside>
 
@@ -87,38 +86,38 @@
 
     var map = new mapboxgl.Map({
       container: 'map', // container id
-      style: 'mapbox://styles/brookefzy/cka1yguhe01of1jqharhr7bei' // replace this with your style URL
+      style: 'mapbox://styles/brookefzy/cl7ye6i8p00d414mmi42n55pl' // replace this with your style URL
     });
 
-
-      map.on('click','Mismatch Index', function(e) {
-        // var cbgs = map.queryRenderedFeatures(e.point,{
-        //   layers:['rdof-group']
-        // });
-        console.log(e.features[0].properties.logvisit_predict)
+    
+    
+      map.on('click','str-boston-16', function(e) {
+   
           new mapboxgl.Popup()
           .setLngLat(e.lngLat)
           .setHTML(
-
-            '<h3>Diversity Score: '+percentNumber(e.features[0].properties.store_diversity)+'</h3>'+'<h2><strong>'+e.features[0].properties.st_label+'</strong></h2>'+
-            '<h3>Offline: '+svgbar1(e.features[0].properties.total_visit)+
-                // percentNumvisit(e.features[0].properties.total_visit)+'</h3>'+
-            '<h3>Online: '+svgbar2(e.features[0].properties.logvisit_predict)+///////////need adjustment
-                // percentNumpre(e.features[0].properties.logvisit_predict)+'</h3>'+
+            '<h2><strong>'+e.features[0].properties.name+'</strong></h2>'+
+                '<h5>STREET ESM</h5>'+
                 '<h4><strong>'+
-             percentNumber(e.features[0].properties.mismatch_reshape)+'</strong></h4>'+
-             '<h3>Mismatch Index</strong><br></h3>'
+                    round2(e.features[0].properties.expdiv)+'</strong></h4>'+
+                    '<h5>VISITING TIME BY INCOME GROUP</h5>'+
+                    '<h3>'+ bar4group(e.features[0].properties['0pro'], e.features[0].properties['1pro'], 
+                e.features[0].properties['2pro'],e.features[0].properties['3pro'])+
+                '<h5>TOTAL VISITING HOURS: <strong>'+
+            roundHour(e.features[0].properties.timevisit)+'</strong></h5>'
         )
           .addTo(map);
           });
 
-          // Change the cursor to a pointer when the mouse is over the states layer.
-          map.on('mouseenter', 'Mismatch Index', function() {
+         
+
+          // Change the cursor to a pointer when the mouse is over the layer.
+          map.on('mouseenter', 'str-boston-16', function() {
           map.getCanvas().style.cursor = 'pointer';
           });
 
           // Change it back to a pointer when it leaves.
-          map.on('mouseleave', 'Mismatch Index', function() {
+          map.on('mouseleave', 'str-boston-16', function() {
           map.getCanvas().style.cursor = '';
           });
 
@@ -129,53 +128,6 @@
             mapboxgl: mapboxgl
             }));
 //geocoder
-
-
-
-            function switchStyle(){
-                var selstyle = document.getElementById("layer");
-                var layerId = selstyle.value;
-                var legendname=document.getElementById("legendtitle")
-                var legendleft=document.getElementById("legend-left")
-                var legendright=document.getElementById("legend-right")
-                var legendcolor=document.getElementById("mismatch-color")
-
-                if(layerId=="offline"){
-                // console.log(layerId)
-                map.setStyle('mapbox://styles/brookefzy/cka34gg5f024q1ipfokjck4u2');
-                legendname.innerHTML ="Offline Visit"
-                legendleft.innerHTML = "Low"
-                legendright.innerHTML = "High"
-                legendcolor.className ="offline-legend"
-
-            }else if(layerId=="online"){
-                legendname.innerHTML ="Online Visit"
-                legendleft.innerHTML = "Low"
-                legendright.innerHTML = "High"
-                legendcolor.className ="online-legend"
-
-
-                map.setStyle('mapbox://styles/brookefzy/cka34ksar02bw1iqqwwofy3os')
-
-            }else if (layerId=="mismatch"){
-                legendname.innerHTML ="Mismatch Index"
-                legendleft.innerHTML = "Offline"
-                legendright.innerHTML = "Online"
-                legendcolor.className="mismatch-legend"
-                map.setStyle('mapbox://styles/brookefzy/cka1yguhe01of1jqharhr7bei');
-            }else if (layerId =="quantilediff"){
-                legendname.innerHTML ="Quantile Difference"
-                legendleft.innerHTML = "Offline"
-                legendright.innerHTML = "Online"
-                legendcolor.className ="quantile-legend"
-                map.setStyle('mapbox://styles/brookefzy/cka4g185703h01ilgwf3qjrg4')
-            }
-
-            }
-
-
-
-
 
 
   </script>
