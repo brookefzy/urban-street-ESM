@@ -6,7 +6,7 @@ body {
 
 h1  {
     font-family: "Montserrat", sans-serif;
-    color: white;
+    color: #2f2f2f;
     /* font-weight: Black; */
     font-size: 64px;
 }
@@ -14,11 +14,11 @@ h1  {
 h2 {
     font-family: "Montserrat", sans-serif;
     font-size: 32px;
-    color: white;
+    color: #2f2f2f;
     position: relative;
     top: 0%;
     line-height: 1.3;
-    width: 800px;
+    width: 900px;
 }
 
 p   {
@@ -30,7 +30,7 @@ p   {
     text-align: justify;
 
     position: relative;
-    color: white;
+    color: #2f2f2f;
 
     top: 0px;
     /* height: 70px; */
@@ -42,7 +42,7 @@ p   {
     font-weight: 700;
     font-size: 24px;
 
-    color: white;
+    color: #2f2f2f;
 
     position: relative;
     bottom: 20%;
@@ -83,7 +83,7 @@ p   {
     background-color: #c22e01;
     /* width: %; */
     border: none;
-    color: white;
+    color: #2f2f2f;
     font-size: 1em;
     /* margin-top: 2%; */
     /* margin-bottom: 20px; */
