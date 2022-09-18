@@ -214,13 +214,14 @@ iframe {
 
 .section-content h2, .section-content ol {
     color: #000;
-    font: 300 normal 24px/32px "Montserrat", sans-serif;
+    /* font-weight: 900; */
+    font: 600 normal 24px/32px "Montserrat", sans-serif;
+    /* margin-top: 100px; */
 }
 .section-content h2 {
     display: block;
-    /* font-size: 10px; */
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
+    margin-block-start: 60px;
+    margin-block-end: 10px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
@@ -232,7 +233,7 @@ iframe {
 }
 
 .section-content p a {
-    color: #ffd447;
+    color: #8a47ff;
     text-decoration: none;
 }
 
@@ -240,5 +241,4 @@ figcaption{
     margin-top: -10px;
     padding:-10px;
     font-size: 10px;
-
 }

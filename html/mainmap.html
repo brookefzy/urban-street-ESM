@@ -46,27 +46,25 @@
                         <div class="labels-legend">
                             <span class="as-caption" id="legend-left">Segregated</span>
                             <span class="as-caption" id="legend-right">Mixed</span>
-                            <!-- <div class="legend-triangle">
-                                <svg height="10" width="100" class ="legend-triangle-poly">
-                                    <polygon points="0,10,100,10,100,0,0,7" style="fill:white;stroke:no" />
-                                </svg>
-                                <span class="as-caption-2" >Total Time</span>
-                            </div> -->
-
-                        <!-- <div class="labels-legend"> -->
+                        </div>
+                        <div >
+                            
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- <section  class="as-box layer" >
-                <select id="layer" onchange = "switchStyle()">
-                    <div class="dropdown-content">
-                        <option value="mismatch">Mismatch Index</option>
-                        <option value="offline">Offline Visit</option>
-                        <option value="online">Online Visit</option>
-                        <option value="quantilediff">Quantile Differences</option>
+            <!-- To Do: Add a section show global distribution of time by each income group -->
+            <!-- <section class="as-box" id="figure">
+                <div class="figure legend-panel js-legend hide-in-onboarding">
+                    <div class="widgets-item legend-inner as-box">
+                        <h2 class="as-body as-font--medium legend-text" id="legendtitle">% TOTAL TIME VISITED</h2>
+                        <div class="esm-legend" id="esm-color"></div>
+                        <div class="labels-legend">
+                            <span class="as-caption" id="legend-left">Segregated</span>
+                            <span class="as-caption" id="legend-right">Mixed</span>
+                        </div>
                     </div>
-                </select>
+                </div>
             </section> -->
         </div>
 
@@ -99,7 +97,7 @@
                 '<h5>STREET ESM</h5>'+
                 '<h4><strong>'+
                     round2(e.features[0].properties.expdiv)+'</strong></h4>'+
-                    '<h5>VISITING TIME BY INCOME GROUP</h5>'+
+                    '<h5>% VISITING TIME BY INCOME GROUP</h5>'+
                     '<h3>'+ bar4group(e.features[0].properties['0pro'], e.features[0].properties['1pro'], 
                 e.features[0].properties['2pro'],e.features[0].properties['3pro'])+
                 '<h5>TOTAL VISITING HOURS: <strong>'+
@@ -119,6 +117,35 @@
           map.on('mouseleave', 'str-boston-16', function() {
           map.getCanvas().style.cursor = '';
           });
+
+          //To Do: render a global distribution of time spent by each income group
+        //   map.on('movestart', () => {
+        //     // reset features filter as the map starts moving
+        //     map.setFilter('str-boston-16', ['has', 'expdiv']);
+        // });
+
+        // map.on('moveend', () => {
+        //     const features = map.queryRenderedFeatures({ layers: ['str-boston-16'] });
+        //     if (features) {
+                
+        //         const g1 = sumtime(features, "0");
+        //         const g2 = sumtime(features, "1");
+        //         const g3 = sumtime(features, "2");
+        //         const g4 = sumtime(features, "3");
+
+        //         // Populate features for the listing overlay.
+        //         bar4group(g1, g2, g3, g4);
+                
+        //         // Clear the input container
+        //         filterEl.value = '';
+                
+        //         // Store the current features in sn `airports` variable to
+        //         // later use for filtering on `keyup`.
+        //         // airports = uniqueFeatures;
+        //         }
+        //         });
+
+
 
 //geocoder
             map.addControl(

@@ -152,23 +152,33 @@ text {
     right: -5px;
     /* width: 180px; */
     background-color: #f8f8f8;
-}
-
-.legend-panel {
-    width: 235px;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-
-
-}
-.legend {
     transition: all .3s cubic-bezier(.4,.01,.165,.99);
     background: var(--black);
     /* box-shadow: 0 0 24px #f8f8f8; */
     pointer-events: all;
     font-family: "SF Pro Text", sans-serif;
     font-variant: small-caps;
+}
 
+.figure {
+  position: absolute;
+  top: 120px;
+  right: -5px;
+  /* width: 180px; */
+  background-color: #f8f8f8;
+  transition: all .3s cubic-bezier(.4,.01,.165,.99);
+  background: var(--black);
+  /* box-shadow: 0 0 24px #f8f8f8; */
+  pointer-events: all;
+  font-family: "SF Pro Text", sans-serif;
+  font-variant: small-caps;
+}
+
+
+.legend-panel {
+    width: 235px;
+    border-radius: 4px;
+    background-color: #f8f8f8;
 }
 
 .labels-legend {
@@ -193,6 +203,7 @@ text {
 div {
     display: block;
 }
+
 
 
 /*************************** Atlas ***************************/

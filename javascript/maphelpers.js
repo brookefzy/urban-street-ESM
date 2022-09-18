@@ -105,3 +105,50 @@ return '<svg width="200" height="75">\
 	</g>\
 </svg>'
 }
+
+
+function getdist(){
+    let streets = [];
+    const filterEl = document.getElementById('feature-filter');
+    const listingEl = document.getElementById('feature-listing');
+
+    return ""
+}
+
+function renderListings(features) {
+    const empty = document.createElement('p');
+    // Clear any existing listings
+    listingEl.innerHTML = '';
+    if (features.length) {
+    for (const feature of features) {
+    const itemLink = document.createElement('a');
+    const label = `${feature.properties.name} (${feature.properties.abbrev})`;
+    itemLink.href = feature.properties.wikipedia;
+    itemLink.target = '_blank';
+    itemLink.textContent = label;
+    itemLink.addEventListener('mouseover', () => {
+    // Highlight corresponding feature on the map
+    popup
+    .setLngLat(feature.geometry.coordinates)
+    .setText(label)
+    .addTo(map);
+    });
+    listingEl.appendChild(itemLink);
+    }
+     
+    // Show the filter input
+    filterEl.parentNode.style.display = 'block';
+    } else if (features.length === 0 && filterEl.value !== '') {
+    empty.textContent = 'No results found';
+    listingEl.appendChild(empty);
+    } else {
+    empty.textContent = 'Drag the map to populate results';
+    listingEl.appendChild(empty);
+     
+    // Hide the filter input
+    filterEl.parentNode.style.display = 'none';
+     
+    // remove features filter
+    map.setFilter('airport', ['has', 'abbrev']);
+    }
+    }
