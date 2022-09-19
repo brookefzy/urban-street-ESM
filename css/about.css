@@ -84,7 +84,7 @@ li {
     padding-top: 10%;
     /* margin-top: 10%; */
     /* margin-top: 7%; */
-    width: 50%;
+    width: 80%;
     height: 38%;
     /* height: 45%; */
 }
@@ -149,7 +149,7 @@ li {
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 80%;
     /* align-content: center; */
 }
 
@@ -182,7 +182,7 @@ p {
 
 .column {
     float: left;
-    width: 31.33%;
+    width: 18%;
     margin-left: 1%;
     margin-right: 1%;
     display: inline-block;
@@ -212,24 +212,14 @@ img {
     text-align: center;
 }
 
-/* #name1 {
-    float: left;
-    width: 33.33333%;
-    text-align: left;
-
+.column_advisor {
+    /* float: left; */
+    width: 45%;
+    margin-left: 1%;
+    margin-right: 1%;
+    display: inline-block;
 }
 
-#name2 {
-    float: left;
-    width: 33.33333%;
-    text-align: center;
-}
-
-#name3 {
-    float: left;
-    width: 33.33333%;
-    text-align: right;
-} */
 
 #name_advisor {
     position: relative;
