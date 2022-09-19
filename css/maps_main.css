@@ -118,12 +118,12 @@ text {
 }
 .esm-legend {
     height: 6px;
-    /* background: linear-gradient(90deg,#d7191c 0%,#d7191c 20%,#fdae61 20%,#fdae61 40%,
+    background: linear-gradient(90deg,#d7191c 0%,#d7191c 20%,#fdae61 20%,#fdae61 40%,
     #ffe405 40%, #ffe405 60%,
-    #abdda4 60%,#abdda4 80%,#2b83ba 80%,#2b83ba 100%); */
-    background: linear-gradient(90deg,#f9edcc 0%,#f9edcc 20%,#f9df74 20%,#f9df74 40%,
+    #abdda4 60%,#abdda4 80%,#2b83ba 80%,#2b83ba 100%);
+    /* background: linear-gradient(90deg,#f9edcc 0%,#f9edcc 20%,#f9df74 20%,#f9df74 40%,
     #EDAE49 40%, #EDAE49 60%,
-    #ea2b1f 60%,#ea2b1f 80%,#61210f 80%,#61210f 100%);
+    #ea2b1f 60%,#ea2b1f 80%,#61210f 80%,#61210f 100%); */
 }
 
 .widgets-item {
