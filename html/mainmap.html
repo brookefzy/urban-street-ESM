@@ -42,16 +42,22 @@
                 <div class="legend legend-panel js-legend hide-in-onboarding">
                     <div class="widgets-item legend-inner as-box">
                         <h2 class="as-body as-font--medium legend-text" id="legendtitle">ESM</h2>
+                        
+                        <div class="labels-legend">
+                            <span class="as-caption" id="legend-left">0</span>
+                            <span class="as-caption" id="legend-right">1</span>
+                            
+                        </div>
                         <div class="esm-legend" id="esm-color"></div>
+
                         <div class="labels-legend">
                             <span class="as-caption" id="legend-left">Segregated</span>
                             <span class="as-caption" id="legend-right">Mixed</span>
+                            
                         </div>
-                        <div >
                             
                         </div>
                     </div>
-                </div>
             </section>
             <!-- To Do: Add a section show global distribution of time by each income group -->
             <!-- <section class="as-box" id="figure">
@@ -97,7 +103,7 @@
                 '<h5>STREET ESM</h5>'+
                 '<h4><strong>'+
                     round2(e.features[0].properties.expdiv)+'</strong></h4>'+
-                    '<h5>% VISITING TIME BY INCOME GROUP</h5>'+
+                    '<h5>%VISITING TIME BY INCOME GROUP</h5>'+
                     '<h3>'+ bar4group(e.features[0].properties['0pro'], e.features[0].properties['1pro'], 
                 e.features[0].properties['2pro'],e.features[0].properties['3pro'])+
                 '<h5>TOTAL VISITING HOURS: <strong>'+

@@ -68,7 +68,7 @@ function bar4group(g1, g2, g3, g4){
     // h2= g2/3600000
     // h3= g3/3600000
     // h4= g4/3600000
-    const hmax = 56
+    const hmax = 58
     h1= g1*hmax
     h2= g2*hmax
     h3= g3*hmax
@@ -82,26 +82,26 @@ function bar4group(g1, g2, g3, g4){
     divide = Math.ceil(maxvalue/4)
 
 return '<svg width="200" height="75">\
-    <g transform="translate(5,5)">\
+    <g transform="translate(0,5)">\
 	<g class="x axis" transform="translate(0,60)">\
-			<g class="tick" transform="translate(20.5,0)" style="opacity: 1;"><line y2="1" x2="0"></line>\
-			<text dy=".71em" y="3" x="0" style="text-anchor: middle;">Q1</text>\
+			<g class="tick" transform="translate(18.5,0)" style="opacity: 1;"><line y2="1" x2="0"></line>\
+			<text dy=".71em" y="3" x="0" style="text-anchor: middle;"><60K</text>\
 		</g>\
-			<g class="tick" transform="translate(60.5,0)" style="opacity: 1;"><line y2="1" x2="0"></line>\
-			<text dy=".71em" y="3" x="0" style="text-anchor: middle;">Q2</text>\
+			<g class="tick" transform="translate(65.5,0)" style="opacity: 1;"><line y2="1" x2="0"></line>\
+			<text dy=".71em" y="3" x="0" style="text-anchor: middle;">60-84K</text>\
 		</g>\
-			<g class="tick" transform="translate(100.5,0)" style="opacity: 1;"><line y2="1" x2="0"></line>\
-			<text dy=".71em" y="3" x="0" style="text-anchor: middle;">Q3</text>\
+			<g class="tick" transform="translate(113,0)" style="opacity: 1;"><line y2="1" x2="0"></line>\
+			<text dy=".71em" y="3" x="0" style="text-anchor: middle;">84-109K</text>\
 		</g>\
-			<g class="tick" transform="translate(140.5,0)" style="opacity: 1;"><line y2="1" x2="0"></line>\
-			<text dy=".71em" y="3" x="0" style="text-anchor: middle;">Q4</text>\
+			<g class="tick" transform="translate(160,0)" style="opacity: 1;"><line y2="1" x2="0"></line>\
+			<text dy=".71em" y="3" x="0" style="text-anchor: middle;">>109K</text>\
 		</g>\
         <path class="domain" d="M0,6V0H900V6"></path>\
 	</g>\
-		<rect class="bar2" id ="rcorners1" x="10" width="25" y="'+ h1.toFixed(2)+'" height="'+height1+'"style="fill:#DC4F52;"></rect>\
-		<rect class="bar2" id ="rcorners1" x="50" width="25"  y="'+h2.toFixed(2)+'" height="'+height2+'"style="fill:#EFA020;"></rect>\
-		<rect class="bar2" id ="rcorners1" x="90" width="25"  y="'+h3.toFixed(2)+'" height="'+height3+'"style="fill:#2F7864;"></rect>\
-		<rect class="bar2" id ="rcorners1" x="130" width="25"  y="'+h4.toFixed(2)+'" height="'+height4+'"style="fill:#00AFD8;"></rect>\
+		<rect class="bar2" id ="rcorners1" x="3" width="30" y="'+height1 +'" height="'+h1.toFixed(2)+'"style="fill:#DC4F52;"></rect>\
+		<rect class="bar2" id ="rcorners1" x="49.5" width="30"  y="'+height2 +'" height="'+h2.toFixed(2)+'"style="fill:#EFA020;"></rect>\
+		<rect class="bar2" id ="rcorners1" x="98" width="30"  y="'+height3 +'" height="'+h3.toFixed(2)+'"style="fill:#2F7864;"></rect>\
+		<rect class="bar2" id ="rcorners1" x="145.5" width="30"  y="'+height4+'" height="'+h4.toFixed(2)+'"style="fill:#00AFD8;"></rect>\
 	</g>\
 </svg>'
 }
