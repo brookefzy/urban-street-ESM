@@ -506,3 +506,16 @@ margin-left: 0px;
 }
 
 
+.widgets-hint {
+  position: relative;
+  top: 130px;
+  right:5px;
+  list-style-type: none;
+  color: #101010;
+  width: 235px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.1);
+  background-color: rgba(255,255,255,0.9);
+  font-size: small;
+  text-align: center;
+}

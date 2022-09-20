@@ -75,16 +75,16 @@ li {
     font-weight: 600;
 }
 
-.content {
+.container {
     /* position: relative; */
     font-family: "Montserrat", sans-serif;
     /* display: block; */
     margin-left: auto;
     margin-right: auto;
-    padding-top: 10%;
+    padding-top: 7%;
     /* margin-top: 10%; */
     /* margin-top: 7%; */
-    width: 80%;
+    width: 90%;
     height: 38%;
     /* height: 45%; */
 }
