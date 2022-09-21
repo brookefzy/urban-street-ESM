@@ -98,10 +98,10 @@ return '<svg width="200" height="75">\
 		</g>\
         <path class="domain" d="M0,6V0H900V6"></path>\
 	</g>\
-		<rect class="bar2" id ="rcorners1" x="3" width="30" y="'+height1 +'" height="'+h1.toFixed(2)+'"style="fill:#DC4F52;"></rect>\
-		<rect class="bar2" id ="rcorners1" x="49.5" width="30"  y="'+height2 +'" height="'+h2.toFixed(2)+'"style="fill:#EFA020;"></rect>\
-		<rect class="bar2" id ="rcorners1" x="98" width="30"  y="'+height3 +'" height="'+h3.toFixed(2)+'"style="fill:#2F7864;"></rect>\
-		<rect class="bar2" id ="rcorners1" x="145.5" width="30"  y="'+height4+'" height="'+h4.toFixed(2)+'"style="fill:#00AFD8;"></rect>\
+		<rect class="bar2" id ="rcorners1" x="3" width="30" y="'+height1 +'" height="'+h1.toFixed(2)+'"style="fill:#a8a8a8;"></rect>\
+		<rect class="bar2" id ="rcorners1" x="49.5" width="30"  y="'+height2 +'" height="'+h2.toFixed(2)+'"style="fill:#a8a8a8;"></rect>\
+		<rect class="bar2" id ="rcorners1" x="98" width="30"  y="'+height3 +'" height="'+h3.toFixed(2)+'"style="fill:#a8a8a8;"></rect>\
+		<rect class="bar2" id ="rcorners1" x="145.5" width="30"  y="'+height4+'" height="'+h4.toFixed(2)+'"style="fill:#a8a8a8;"></rect>\
 	</g>\
 </svg>'
 }
