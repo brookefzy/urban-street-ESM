@@ -44,8 +44,8 @@
                         <h2 class="as-body as-font--medium legend-text" id="legendtitle">ESM</h2>
                         
                         <div class="labels-legend">
-                            <span class="as-caption" id="legend-left">0</span>
-                            <span class="as-caption" id="legend-right">1</span>
+                            <span class="as-caption" id="legend-left">0%</span>
+                            <span class="as-caption" id="legend-right">100%</span>
                             
                         </div>
                         <div class="esm-legend" id="esm-color"></div>
@@ -113,7 +113,7 @@
             '<h2><strong>'+e.features[0].properties.name+'</strong></h2>'+
                 '<h5>STREET ESM</h5>'+
                 '<h4><strong>'+
-                    round2(e.features[0].properties.expdiv)+'</strong></h4>'+
+                    round2(e.features[0].properties.expdiv)+'%</strong></h4>'+
                     '<h5>%VISITING TIME BY INCOME GROUP</h5>'+
                     '<h3>'+ bar4group(e.features[0].properties['0pro'], e.features[0].properties['1pro'], 
                 e.features[0].properties['2pro'],e.features[0].properties['3pro'])+

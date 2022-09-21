@@ -53,8 +53,8 @@ function svggroup4(num){
 }
 
 function round2(num){
-    num = num.toFixed(2)
-    return num
+    num = num.toFixed(2)*100
+    return num.toString()
 }
 function roundHour(num){
     num = num/3600
