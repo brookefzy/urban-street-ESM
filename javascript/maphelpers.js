@@ -53,7 +53,8 @@ function svggroup4(num){
 }
 
 function round2(num){
-    num = num.toFixed(2)*100
+    num = num*100
+    num = num.toFixed(0)
     return num.toString()
 }
 function roundHour(num){
@@ -74,8 +75,16 @@ function colorbar(num){
     }else {
         return '#2b83ba'
     }
-    
+}
 
+function vibcolor(timevisit){
+    if (timevisit<1097*3600){
+        text = "Low"
+        return '<h4 style = "color:#fdae61"><strong>'+text+'</strong></h4>'
+    }else{
+        text = "High"
+        return '<h4 style = "color:#2b83ba"><strong>'+text+'</strong></h4>'
+    }
 }
 
 function bar4group(g1, g2, g3, g4){
@@ -100,16 +109,16 @@ return '<svg width="200" height="76">\
     <g transform="translate(0,5)">\
 	<g class="x axis" transform="translate(0,60)">\
 			<g class="tick" transform="translate(18.5,0)" style="opacity: 1;"><line y2="1" x2="0"></line>\
-			<text dy=".71em" y="3" x="0" style="text-anchor: middle;">$</text>\
+			<text dy=".71em" y="3" x="0" style="text-anchor: middle; color:#9e9e9e">$</text>\
 		</g>\
 			<g class="tick" transform="translate(65.5,0)" style="opacity: 1;"><line y2="1" x2="0"></line>\
-			<text dy=".71em" y="3" x="0" style="text-anchor: middle;">$$</text>\
+			<text dy=".71em" y="3" x="0" style="text-anchor: middle;color:#9e9e9e">$$</text>\
 		</g>\
 			<g class="tick" transform="translate(113,0)" style="opacity: 1;"><line y2="1" x2="0"></line>\
-			<text dy=".71em" y="3" x="0" style="text-anchor: middle;">$$$</text>\
+			<text dy=".71em" y="3" x="0" style="text-anchor: middle;color:#9e9e9e">$$$</text>\
 		</g>\
 			<g class="tick" transform="translate(160,0)" style="opacity: 1;"><line y2="1" x2="0"></line>\
-			<text dy=".71em" y="3" x="0" style="text-anchor: middle;">$$$$</text>\
+			<text dy=".71em" y="3" x="0" style="text-anchor: middle; color:#9e9e9e">$$$$</text>\
 		</g>\
         <path class="domain" d="M0,6V0H900V6"></path>\
 	</g>\

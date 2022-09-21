@@ -101,14 +101,14 @@ body {
   h4 {
       font-family: "SF Pro Text", sans-serif;
     font-size: 1.2em;
-    color: #101010;
+    /* color: #101010; */
     line-height: 9px;
     background-color: #f8f8f8;
   }
 
 text {
   font-family: "SF Pro Text", sans-serif;
-  color: #101010;
+  color: #676767;
 }
 /*************************** Atlas ***************************/
 .as-container{
@@ -265,8 +265,7 @@ div {
   }
 
   .mapboxgl-popup-content h3 {
-    /* background:#f8f8f8; */
-    /* color: #f8f8f8; */
+
     margin-left: 20px;
     margin-right: 20px;
     display: block;
@@ -276,6 +275,7 @@ div {
     margin-bottom: 5px;
     padding-bottom: 0px;
     margin-top: 5px;
+    color: #616161;
   }
   .mapboxgl-popup-content h5 {
  
@@ -293,15 +293,15 @@ div {
 
   .mapboxgl-popup-content h4 {
     font-family: "SF Pro Text";
-    font-size: 30px;
-    line-height: 32px;
-    display: block;
+    font-size: 28px;
+    line-height: 30px;
+    display: flex;
     padding: 0px;
     font-weight: 200;
     margin-top: -15px;
     margin-bottom: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
+    /* margin-left: 0px;
+    margin-right: 0px; */
 
   }
 
@@ -309,7 +309,7 @@ div {
 
   .mapboxgl-popup-content div {
     /* padding: 10px; */
-    background:#f8f8f8;
+    /* background:#f8f8f8; */
     display: "inline-block";
   }
 
@@ -335,8 +335,8 @@ div {
     bottom: 0;
     width: 5px;
     left: 0;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
 }
 .popup-figure h2 {
     font: 24px "SF Pro Text", sans-serif;
@@ -381,6 +381,7 @@ div {
 
 .axis {
   font: 10px "SF Pro Text";
+  color: #9e9e9e; 
 }
 
 .axis path,
@@ -388,6 +389,9 @@ div {
   fill: none;
   stroke: #fff;
   shape-rendering: crispEdges;
+}
+.axis text {
+  color: #9e9e9e; 
 }
 
 .x.axis path {
