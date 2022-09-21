@@ -123,6 +123,12 @@ text {
     #2b83ba 100%);
 
 }
+.esm-status{
+  margin-top: 0px;
+  height:9px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
 
 .widgets-item {
     position: relative;
@@ -249,9 +255,17 @@ div {
 
     /* color: #fff; */
   }
+  .mapboxgl-popup-content span {
+    display: block;
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* color: #fff; */
+  }
 
   .mapboxgl-popup-content h3 {
-    background:#f8f8f8;
+    /* background:#f8f8f8; */
     /* color: #f8f8f8; */
     margin-left: 20px;
     margin-right: 20px;

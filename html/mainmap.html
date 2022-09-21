@@ -110,6 +110,7 @@
           new mapboxgl.Popup()
           .setLngLat(e.lngLat)
           .setHTML(
+              '<div><span class = "esm-status" style = "background-color: '+colorbar(e.features[0].properties.expdiv)+'"></span><div>'+
             '<h2><strong>'+e.features[0].properties.name+'</strong></h2>'+
                 '<h5>STREET ESM</h5>'+
                 '<h4><strong>'+
