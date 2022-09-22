@@ -10,15 +10,16 @@ body {
 
 h1  {
     font-family: "Montserrat", sans-serif;
-    color: #2f2f2f;
+    color: #010101;
     /* font-weight: Black; */
     font-size: 48px;
 }
 
 h2 {
     font-family: "Montserrat", sans-serif;
-    font-size: 48px;
-    color: #2f2f2f;
+    font-size: 21px;
+    font-weight: 550;
+    color: #010101;
     position: relative;
     top: 0%;
     line-height: 1.3;
@@ -27,7 +28,7 @@ h2 {
 
 p   {
     font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14px;
     line-height: 1.8;
     text-indent: 0em;
@@ -69,18 +70,22 @@ p   {
 .content {
     position: absolute;
     /* bottom: 10%; */
-    top: 40px;
-    left: 40px;
+    top: 8%;
+    left: 5%;
+    /* right: 5%; */
     /* height: 80%; */
-    background-color: rgb(255, 255, 255,0.8);
-    width: 50%;
+    background-color: rgb(255, 255, 255,0.9);
+    max-width:100%;
+    width: 600px;
     padding: 20px;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     border-radius: 10px;
-    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
-
+    float: left;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
 
 }
+
+
 
 .popup_btn {
     display: inline-block;
@@ -91,18 +96,25 @@ p   {
     color: #2f2f2f;
     font-size: 1em;
     /* margin-top: 2%; */
-    
     border-radius: 3px;
     padding: 6px;
     padding-left:18px;
     padding-right:18px;
+    margin-top: 15px;
     padding-bottom: 8px;
-    margin-bottom: 20px;
     box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+
     /* margin:3px; */
     
-
 }
+@media screen and (max-width: 800px) {
+    .content {
+        top:0%;
+    left:0%;
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+
+  }
 
 .supsub {position: absolute; font-size: 32px;}
 .subscript {display:block; position:relative; left:5px; top: 10px; color: #c22e01}
