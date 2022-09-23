@@ -13,6 +13,7 @@ h1  {
     color: #010101;
     /* font-weight: Black; */
     font-size: 48px;
+    margin-top: 5px;
 }
 
 h2 {
@@ -36,6 +37,7 @@ p   {
     position: relative;
     color: #2f2f2f;
     top: 0px;
+    /* bottom:20px; */
     /* height: 70px; */
     /* width: 720px; */
 }
@@ -45,11 +47,11 @@ p   {
     font-weight: 700;
     font-size: 24px;
 
-    color: #2f2f2f;
+    color: #fff;
 
     position: relative;
-    bottom: 20%;
-    margin-bottom: 10px;
+    /* bottom: 20%;
+    margin-bottom: 10px; */
 }
 
 /* #playBtn {
@@ -69,15 +71,16 @@ p   {
 
 .content {
     position: absolute;
-    /* bottom: 10%; */
-    top: 8%;
-    left: 5%;
+    
+    top: 4%;
+    left: 4%;
+    /* bottom: 8%; */
     /* right: 5%; */
     /* height: 80%; */
     background-color: rgb(255, 255, 255,0.9);
     max-width:100%;
-    width: 600px;
-    padding: 20px;
+    width: 750px;
+    padding: 40px;
     /* overflow-y: auto; */
     border-radius: 10px;
     float: left;
@@ -90,10 +93,10 @@ p   {
 .popup_btn {
     display: inline-block;
     /* position:absolute; */
-    background-color: #ffe600;
+    background-color: #024bd4;
     /* width: %; */
     border: none;
-    color: #2f2f2f;
+    color: #fff;
     font-size: 1em;
     /* margin-top: 2%; */
     border-radius: 3px;
@@ -110,8 +113,12 @@ p   {
 @media screen and (max-width: 800px) {
     .content {
         top:0%;
-    left:0%;
+        /* bottom:0%; */
+      left:0%;
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    };
+    .popup_btn{
+        margin-top: 2%;
     }
 
   }

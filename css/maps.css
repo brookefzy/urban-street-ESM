@@ -11,7 +11,7 @@ body {
 
 .header {
   z-index: 1;
-  background-color: #f8f8f8;
+  background-color: #fff;
   position: fixed;
   color: #303030;
   width: 100%;
@@ -67,7 +67,7 @@ li {
 }
 
 #map {
-  color: #000;
+  color: #024bd4;
   font-weight: 600;
 }
 
