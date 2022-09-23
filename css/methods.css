@@ -243,3 +243,17 @@ figcaption{
     padding:-10px;
     font-size: 10px;
 }
+
+@media screen and (max-width: 750px) {
+    .section-content {
+        top:0%;
+        /* bottom:0%; */
+        right: 0%;
+      left:0%;
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    };
+    /* .popup_btn{
+        margin-top: 2%;
+    } */
+
+  }
