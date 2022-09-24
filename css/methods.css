@@ -184,7 +184,7 @@ iframe {
 .section-content {
     margin-top: 0;
     margin-left: 0;
-    width: 40%;
+    width: 700px;
     padding: 30px 30px;
     z-index: 400;
 }
@@ -244,7 +244,7 @@ figcaption{
     font-size: 10px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 720px) {
     .section-content {
         top:0%;
         /* bottom:0%; */
