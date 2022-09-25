@@ -57,6 +57,12 @@ function round2(num){
     num = num.toFixed(0)
     return num.toString()
 }
+
+function round1(num){
+    num = num*100
+    num = num.toFixed(0)
+    return num.toString()
+}
 function roundHour(num){
     num = num/3600
     return num.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -91,11 +97,13 @@ function vibcolor(timevisit){
 
 function bar4group(g1, g2, g3, g4){
 
+
     const hmax = 58
     h1= g1*hmax
     h2= g2*hmax
     h3= g3*hmax
     h4= g4*hmax
+
 
     height1 = hmax-h1.toFixed(2)
     height2 = hmax-h2.toFixed(2)
@@ -103,6 +111,12 @@ function bar4group(g1, g2, g3, g4){
     height4 = hmax-h4.toFixed(2)
     maxvalue = Math.ceil(Math.max(h1,h2,h3,h4))
     divide = Math.ceil(maxvalue/4)
+    labelstle = 'text-anchor: middle; color:#9e9e9e; ; font-size: 11px; font-weight:400;'
+    delta = 5
+    th1 = height1-delta
+    th2 = height2-delta
+    th3 = height3-delta
+    th4 = height4-delta
 
 return '<svg width="200" height="76">\
     <g transform="translate(0,5)">\
@@ -125,6 +139,12 @@ return '<svg width="200" height="76">\
 		<rect class="bar2" id ="rcorners1" x="49.5" width="30"  y="'+height2 +'" height="'+h2.toFixed(2)+'"style="fill:#024bd4;"></rect>\
 		<rect class="bar2" id ="rcorners1" x="98" width="30"  y="'+height3 +'" height="'+h3.toFixed(2)+'"style="fill:#024bd4;"></rect>\
 		<rect class="bar2" id ="rcorners1" x="145.5" width="30"  y="'+height4+'" height="'+h4.toFixed(2)+'"style="fill:#024bd4;"></rect>\
+	</g>\
+    </g>\
+		<text dy=".71em" x="10" style="text-anchor: left; color:#9e9e9e; font-size: 11px; font-weight:200;" y="'+th1 +'">'+round1(g1)+'%</text>\
+		<text dy=".71em" x="56.5" style="text-anchor: left; color:#9e9e9e; font-size: 11px; font-weight:200;" y="'+th2 +'">'+round1(g2)+'%</text>\
+		<text dy=".71em" x="105" style="text-anchor: left; color:#9e9e9e; font-size: 11px; font-weight:200;" y="'+th3 +'">'+round1(g3)+'%</text>\
+		<text dy=".71em" x="152.5" style="text-anchor: left; color:#9e9e9e; font-size: 11px; font-weight:200;" y="'+th4+'">'+round1(g4)+'%</text>\
 	</g>\
 </svg>'
 }
