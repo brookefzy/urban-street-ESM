@@ -53,7 +53,7 @@ function svggroup4(num){
 }
 
 function round2(num){
-    num = num*100
+    num = (1-num)*100
     num = num.toFixed(0)
     return num.toString()
 }
