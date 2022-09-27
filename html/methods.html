@@ -39,15 +39,15 @@
 
                 
                         <h2 style = "color:#024bd4">Why it matters?</h2>
-                        <p><strong style = "color:#024bd4">“We shape our buildings; thereafter they shape us.” </strong>
+                        <p><strong style = "color:#024bd4">“We shape our buildings; there after they shape us.” </strong>
                             <br>
                             <br>
                             Diversity is intrinsic to a sustainable, resilient, and inclusive city. The probability of meeting diverse groups
                              of others also shape our own path self-development. Cities have learned to build mixed-income housing to encourage 
                              people with different socioeconomic status to meet each other. However, so far we have not leverage any specific planning 
                              tools to encourage a diverse experience through our daily life. In view of this gap, our research team focus on a very 
-                             unique spatial unit, the urban street sidewalk, to construct a <strong style = "color:#024bd4; font-weight: 600;">Experienced Social Mixing (ESM)</strong> index to understand the 
-                             likelihood of us meeting people with different income backgrounds.
+                             unique spatial unit, the urban street sidewalk, to construct a <strong style = "color:#024bd4; font-weight: 600;">diversity</strong> index 
+                             to understand the likelihood of us meeting people with different income backgrounds.
                             
             
                             <!-- <iframe width="900" height="700" frameborder="0" scrolling= "no" src="bubble.html"> </iframe>
@@ -57,10 +57,11 @@
                 
 
                   
-                        <h2>Construct the ESM</h2>
-                        <p> Our measure of ESM is constructed from a privacy-enhanced mobility dataset provided by Cuebiq, which includes 
-                            3-month long records across two years of anonymized device-level location pings for 0.5 million users. 
-                            To construct the ESM, we pre-process the data to identify each device's home Census Block Group (CBG) and 
+                        <h2>Construct the Diversity</h2>
+                        <p> Our measure of street-level experienced diversity index is constructed from a privacy-enhanced mobility dataset 
+                            provided by Cuebiq, which includes 3-month long records across two years of anonymized device-level location 
+                            pings for 0.5 million users. 
+                            To construct the diversity index, we pre-process the data to identify each device's home Census Block Group (CBG) and 
                             stay locations using the same method in a previous work by Moro et al.(2020). 
                             We first associate each device from the mobility dataset with an approximate socioeconomic status by their 
                             inferred home CBG. Each individual's home CBG is obtained from their most commonly visited location between 
@@ -70,8 +71,17 @@
                             but a maximum of two hours. This is to prioritize sidewalk activities that have the potential for meaningful 
                             interaction among pedestrians. Activities such as visiting cafes, restaurants, parks, or simply resting along 
                             the streets are emphasized.
-                            </p>
+                            <br>
+                            <br>
                             <img class="figure" id = "center" src="../assets/img/construction.png" width="70%">
+                            <br>
+                            <br>
+                            The diversity index is calculated with the proportion of total time spent at that street by each income quartile. 
+                            It quantifies income diversity from 0 to 1. A street segment that is fully mixed when the total time across 
+                            all individuals spent at the street segment is split evenly among the four income quartiles, 
+                            while a street segment with 0 value diversity index indicates that the street segment is only visited by one income group. 
+                            </p>
+                            
 
                      
                     
