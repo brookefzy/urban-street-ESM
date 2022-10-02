@@ -44,7 +44,7 @@
                 <!-- legend -->
                 <div class="legend legend-panel js-legend hide-in-onboarding">
                     <div class="widgets-item legend-inner as-box">
-                        <h2 class="as-body as-font--medium legend-text" id="legendtitle">Street Income Diversity</h2>
+                        <h2 class="as-body legend-text" id="legendtitle">Street Income Diversity</h2>
                         
                         <div class="labels-legend">
                             <span class="as-caption" id="legend-left">0%</span>
@@ -84,6 +84,15 @@
                     </div>
                 </div>
             </section> -->
+            <!-- To Do: Add a dropdown to select from a city -->
+            <section  class="as-box layer">
+                <select id="layer" onchange = "flyto()">
+                    <div class="dropdown-content">
+                        <option value="boston">Boston</option>
+                        <option value="nyc">New York City</option>
+                        <option value="philly">Philadelphia</option>
+                    </div>
+                </select>
         </div>
 
 
@@ -106,11 +115,17 @@
       zoom:13
     });
 
+    const popup = new mapboxgl.Popup({
+closeButton: true,
+closeOnClick: true
+});
+
     
     
       map.on('click','str-3city-viz', function(e) {
-   
-          new mapboxgl.Popup()
+        // map.on('mouseenter','str-3city-viz', function(e) {
+            
+            popup
           .setLngLat(e.lngLat)
           .setHTML(
             //   '<div><span class = "esm-status" style = "background-color: '+colorbar(e.features[0].properties.expdiv)+
@@ -140,6 +155,7 @@
           .addTo(map);
           });
 
+          
          
 
           // Change the cursor to a pointer when the mouse is over the layer.
@@ -150,6 +166,8 @@
           // Change it back to a pointer when it leaves.
           map.on('mouseleave', 'str-3city-viz', function() {
           map.getCanvas().style.cursor = '';
+        //   popup.remove();
+
           });
 
 
@@ -167,10 +185,10 @@
     easing: function(t) {
       return t;
     },
-   // If you want your result not to go further than a specific zoom
   }
             }));
 //geocoder
+
 
 
   </script>

@@ -181,6 +181,29 @@ function getdist(){
     return ""
 }
 
+//Dropdown
+function flyto(){
+    var selcity = document.getElementById("layer");
+    var cityId = selcity.value;
+    if (cityId=="boston"){
+        map.flyTo({
+    center: [-71.068830, 42.356489],
+    zoom:13});
+    } else
+    if (cityId=="nyc"){
+        map.flyTo({
+    center: [-73.999409,40.722479],
+    zoom:13});
+    }else
+    if (cityId=="philly"){
+        map.flyTo({
+    center: [-75.165750,39.953566],
+    zoom:13});
+    }
+}
+//Dropdown
+
+
 function renderListings(features) {
     const empty = document.createElement('p');
     // Clear any existing listings
