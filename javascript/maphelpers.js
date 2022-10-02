@@ -83,13 +83,36 @@ function colorbar(num){
     }
 }
 
-function vibcolor(timevisit){
-    if (timevisit<1097*3600){
+function vibcolor(timevisit, city){
+    if (city=='newyork'){
+        if (timevisit<1931*3600){
 
-        return '<h4 ><strong>Low</strong></h4>'
-    }else{
+            return '<h4 ><strong>Low</strong></h4>'
+        }else{
+    
+            return '<h4><strong>High</strong></h4>'
+        }
 
-        return '<h4><strong>High</strong></h4>'
+    }
+    else if (city=='boston'){
+        if (timevisit<1656*3600){
+
+            return '<h4 ><strong>Low</strong></h4>'
+        }else{
+    
+            return '<h4><strong>High</strong></h4>'
+        }
+
+    }
+    else {
+        if (timevisit<1551*3600){
+
+            return '<h4 ><strong>Low</strong></h4>'
+        }else{
+    
+            return '<h4><strong>High</strong></h4>'
+        }
+
     }
 }
 

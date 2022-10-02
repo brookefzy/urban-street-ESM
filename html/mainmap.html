@@ -108,7 +108,7 @@
 
     
     
-      map.on('click','str-boston-16', function(e) {
+      map.on('click','str-3city-viz', function(e) {
    
           new mapboxgl.Popup()
           .setLngLat(e.lngLat)
@@ -127,7 +127,7 @@
 
                 '<div class="col-sm-5">'+
                 '<h5 style = "margin-left:0">VIBRANCY</h5>'+
-                vibcolor(e.features[0].properties.timevisit)
+                vibcolor(e.features[0].properties.timevisit, e.features[0].properties.city)
                 +'</div>'
                 +'</div>'+
                 
@@ -143,41 +143,16 @@
          
 
           // Change the cursor to a pointer when the mouse is over the layer.
-          map.on('mouseenter', 'str-boston-16', function() {
+          map.on('mouseenter', 'str-3city-viz', function() {
           map.getCanvas().style.cursor = 'pointer';
           });
 
           // Change it back to a pointer when it leaves.
-          map.on('mouseleave', 'str-boston-16', function() {
+          map.on('mouseleave', 'str-3city-viz', function() {
           map.getCanvas().style.cursor = '';
           });
 
-          //To Do: render a global distribution of time spent by each income group
-        //   map.on('movestart', () => {
-        //     // reset features filter as the map starts moving
-        //     map.setFilter('str-boston-16', ['has', 'expdiv']);
-        // });
 
-        // map.on('moveend', () => {
-        //     const features = map.queryRenderedFeatures({ layers: ['str-boston-16'] });
-        //     if (features) {
-                
-        //         const g1 = sumtime(features, "0");
-        //         const g2 = sumtime(features, "1");
-        //         const g3 = sumtime(features, "2");
-        //         const g4 = sumtime(features, "3");
-
-        //         // Populate features for the listing overlay.
-        //         bar4group(g1, g2, g3, g4);
-                
-        //         // Clear the input container
-        //         filterEl.value = '';
-                
-        //         // Store the current features in sn `airports` variable to
-        //         // later use for filtering on `keyup`.
-        //         // airports = uniqueFeatures;
-        //         }
-        //         });
 
 
 
@@ -185,7 +160,15 @@
             map.addControl(
             new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl
+            mapboxgl: mapboxgl,
+            flyTo: {
+                zoom:12,
+    padding: 15, // If you want some minimum space around your result
+    easing: function(t) {
+      return t;
+    },
+   // If you want your result not to go further than a specific zoom
+  }
             }));
 //geocoder
 
