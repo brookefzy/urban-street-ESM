@@ -3,7 +3,7 @@ html, body {
   width: 100%;
 }
 body {
-    background: #f8f8f8;
+    background: #ffffff;
     color: #101010;
     font: 500 20px/26px 'Helvetica Neue', Helvetica, Arial, Sans-serif;
     margin: 0;
@@ -76,8 +76,8 @@ body {
     width: 100%
   }
   .heading {
-    /* background: #f8f8f8; */
-    border-bottom: 1px solid #f8f8f8;
+    /* background: #ffffff; */
+    border-bottom: 1px solid #ffffff;
     height: 60px;
     line-height: 60px;
     padding: 10 10px;
@@ -103,7 +103,7 @@ body {
     font-size: 1.2em;
     /* color: #101010; */
     line-height: 9px;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
   }
 
 text {
@@ -158,7 +158,7 @@ text {
     top: 40px;
     right: 15px;
     /* width: 180px; */
-    background-color: #f8f8f8;
+    background-color: #ffffff;
     transition: all .3s cubic-bezier(.4,.01,.165,.99);
     background: var(--black);
     box-shadow:0px 2px 2px 0px rgba(0,0,0,0.05);
@@ -172,10 +172,10 @@ text {
   top: 120px;
   right: 0px;
   /* width: 180px; */
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   transition: all .3s cubic-bezier(.4,.01,.165,.99);
   background: var(--black);
-  /* box-shadow: 0 0 24px #f8f8f8; */
+  /* box-shadow: 0 0 24px #ffffff; */
   pointer-events: all;
   font-family: "Montserrat", sans-serif;
 
@@ -185,7 +185,7 @@ text {
 .legend-panel {
     width: 235px;
     border-radius: 4px;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
 }
 
 .labels-legend {
@@ -199,7 +199,7 @@ text {
 .legend-inner {
     border: none;
     padding: 12px;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
 }
 
 .as-caption {
@@ -227,7 +227,7 @@ div {
     padding: 0;
     width: 220px;
     /* height: 190px; */
-    background: #f8f8f8;
+    background: #ffffff;
     display: "inline-block";
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 
@@ -237,7 +237,7 @@ div {
   .mapboxgl-popup-content-wrapper {
     display: "inline-block";
     padding: 1%;
-    background:#f8f8f8;
+    background:#ffffff;
     color: #616161;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   }
@@ -309,23 +309,23 @@ div {
 
   .mapboxgl-popup-content div {
     /* padding: 10px; */
-    /* background:#f8f8f8; */
+    /* background:#ffffff; */
     display: "inline-block";
   }
 
   .mapboxgl-container .leaflet-marker-icon {
     cursor: pointer;
-    color: #f8f8f8;
-    background-color: #f8f8f8;
+    color: #ffffff;
+    background-color: #ffffff;
   }
 
   .mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
     margin-top: 15px;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
   }
 
   .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
-    border-bottom-color: #f8f8f8;
+    border-bottom-color: #ffffff;
   }
 
 
@@ -437,6 +437,7 @@ section {
     display: block;
     margin-right: 0px;
     margin-top: 32px;
+    
     /* weight:100%; */
 }
 
@@ -446,12 +447,13 @@ section {
     /* margin-top: 15px; */
     margin-left: auto;
     font-size: medium;
+    
     /* height:100%; */
 }
 
 .as-dropdown {
   display: inline-block;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   left:100px;
   border-color: #fff;
 }
@@ -460,8 +462,8 @@ section {
   display: none;
   position: relative;
   font: 12px "Montserrat", sans-serif;
-  color:#f8f8f8;
-  background-color: #f8f8f8;
+  color:#ffffff;
+  background-color: #ffffff;
   min-width: 160px;
   box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.05);
   padding: 1px 16px;
@@ -476,19 +478,19 @@ select {
   top: 10px;
   right:5px;
   color:#000;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   /* border-radius: 0; */
   width: 235px;
   height: 35px;
   box-shadow:0px 2px 2px 0px rgba(0,0,0,0.05);
-  /* padding: 2px 16px; */
+  padding: 4px 6px 6px 4px;
   z-index: 1;
 
   margin-top:150px;
   margin-right:0px;
   border-color: #fff;
   border-radius:5px;
-  padding: 5px;
+  /* padding: 7px; */
 
   font-family: "Montserrat", sans-serif;
 
@@ -541,4 +543,19 @@ margin-left: 0px;
   font-size: small;
   text-align: center;
   font-family: "Montserrat", sans-serif;
+}
+
+.mapboxgl-ctrl-geocoder {
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  position: relative;
+  background-color: #ffffff;
+  /* width: 100%; */
+  width: 235px;
+  z-index: 1;
+  border-radius: 4px;
+  height: 35px;
+  /* transition: width .25s, min-width .25s; */
 }

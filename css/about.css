@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-    background-color: #f8f8f8;
+    background-color: #ffffff;
     /* background-color: Black; */
     margin: 0;
 }
@@ -14,7 +14,7 @@ body {
 
 .header {
     z-index: 1;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
     position: fixed;
     color: #000;
     width: 100%;
