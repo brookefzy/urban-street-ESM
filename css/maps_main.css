@@ -164,6 +164,7 @@ text {
     box-shadow:0px 2px 2px 0px rgba(0,0,0,0.05);
     pointer-events: all;
     font-family: "Montserrat", sans-serif;
+    font-weight: 500;
 
 }
 
@@ -197,6 +198,7 @@ text {
 }
 
 .legend-inner {
+  font-family: "Montserrat", sans-serif;
     border: none;
     padding: 12px;
     background-color: #ffffff;
@@ -434,6 +436,7 @@ section {
 }
 
 .layer {
+  
     display: block;
     margin-right: 0px;
     margin-top: 32px;
@@ -442,8 +445,12 @@ section {
 }
 
 #layer {
+  position: absolute;
+  font-family: "Montserrat", sans-serif;
     display: block;
-    margin-right: 0px;
+    right:15px;
+    top:65px;
+    /* margin-right: 0px; */
     /* margin-top: 15px; */
     margin-left: auto;
     font-size: medium;
@@ -531,9 +538,9 @@ margin-left: 0px;
 
 
 .widgets-hint {
-  position: relative;
-  top: 147px;
-  right:5px;
+  position: absolute;
+  top: 160px;
+  right:15px;
   list-style-type: none;
   color: #101010;
   width: 235px;
